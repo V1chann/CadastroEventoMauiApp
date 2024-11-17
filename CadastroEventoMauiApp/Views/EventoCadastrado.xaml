@@ -16,12 +16,12 @@
 
         <Frame Margin="10" BackgroundColor="DarkSeaGreen">
             <HorizontalStackLayout>
-                <HorizontalStackLayout>
+                <HorizontalStackLayout Margin="0,0,0,10">
                     <Label Text="Nome do Evento:"/>
                     <Label Text="{Binding Nome}" TextColor="DarkSlateBlue"/>
                 </HorizontalStackLayout>
 
-                <HorizontalStackLayout>
+                <HorizontalStackLayout Margin="-108,20,0,10">
                     <Label Text="Local:"/>
                     <Label Text="{Binding Local}" TextColor="DarkSlateBlue"/>
                 </HorizontalStackLayout>
@@ -37,8 +37,8 @@
                 <Label Grid.Row="0" Grid.Column="2" Text="Duração:" />
 
                 <Label Grid.Row="1" Grid.Column="0" Text="{Binding DataInicio, StringFormat='{0:dd/MM/yyyy}'}" />
-                <Label Grid.Row="1" Grid.Column="1" Text="{Binding DataTermino, StringFormat='{0:dd/MM/yyyy}'}" />
-                
+                <Label Grid.Row="1" Grid.Column="1" Text="{Binding DataTermino, StringFormat='{0:dd/MM/yyyy}'} " />
+                <Label Grid.Row="1" Grid.Column="2" Text="{Binding Duracao} " />
 
             </Grid>
         </Frame>
@@ -46,14 +46,14 @@
         <Frame Margin="10" BackgroundColor="DarkSeaGreen">
             <HorizontalStackLayout>
                 <Label Text="Número de Participantes:"/>
-                <Label Text="{Binding NumeroParticipantes}"/>
+                <Label Text="{Binding NumeroParticipantes}" TextColor="DarkSlateBlue" />
             </HorizontalStackLayout>
         </Frame>
 
         <Frame Margin="10" BackgroundColor="DarkSeaGreen">
             <HorizontalStackLayout>
                 <Label Text="Custo Total:"/>
-                <Label Text="{Binding CustoTotal, StringFormat='{0:C}'}"/>
+                <Label Text="{Binding CustoTotal, StringFormat='{0:C}'}" TextColor="DarkSlateBlue" />
             </HorizontalStackLayout>
         </Frame>
 
