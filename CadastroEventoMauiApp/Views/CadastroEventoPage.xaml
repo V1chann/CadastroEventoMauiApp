@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CadastroEventoMauiApp.Views.CadastroEventoPage"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="AntiqueWhite">
+
+    <VerticalStackLayout VerticalOptions="CenterAndExpand"
+                         Padding="20">
+        
+        <Label Text="Cadastro de Evento"
+               FontFamily="SpicyRice" 
+               FontSize="30"
+               TextColor="DarkSlateBlue"
+               HorizontalOptions="Center"
+               Margin="0,0,0,5"/>
+        
+        <Frame Padding="20" BackgroundColor="DarkSeaGreen">
+            
+            <VerticalStackLayout Spacing="15">
+                <Label Text="Nome do Evento:"/>
+                <Entry Text="{Binding Evento.Nome}"/>
+
+                <Label Text="Data de Início:"/>
+                <DatePicker x:Name="dtpck_checking" Date="{Binding Evento.DataInicio}"/>
+
+                <Label Text="Data de Término:"/>
+                <DatePicker x:Name="dtpck_checkout" Date="{Binding Evento.DataTermino}"/>
+
+                <Label Text="Número de Participantes:"/>
+                <Entry Text="{Binding Evento.NumeroParticipantes}" Keyboard="Numeric"/>
+
+                <Label Text="Local do Evento:"/>
+                <Entry Text="{Binding Evento.Local}"/>
+
+                <Label Text="Custo por Participante:"/>
+                <Entry Text="{Binding Evento.CustoPorParticipante}" Keyboard="Numeric"/>
+
+                <Button Text="Cadastrar"
+                Command="{Binding CadastrarCommand}"
+                BackgroundColor="DarkSlateBlue"
+                TextColor="Snow"/>
+            
+            </VerticalStackLayout>
+        
+        </Frame>
+    
+    </VerticalStackLayout>
+
+</ContentPage>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CadastroEventoMauiApp.Views.EventoCadastrado"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="AntiqueWhite">
+
+    <VerticalStackLayout VerticalOptions="CenterAndExpand"
+                         Padding="10">
+        <Label 
+            Text="Resumo do Evento"
+               FontFamily="SpicyRice" 
+               FontSize="50"
+               TextColor="DarkSlateBlue"
+               HorizontalTextAlignment="Center"/>
+
+        <Frame Margin="10" BackgroundColor="DarkSeaGreen">
+            <HorizontalStackLayout>
+                <HorizontalStackLayout>
+                    <Label Text="Nome do Evento:"/>
+                    <Label Text="{Binding Nome}" TextColor="DarkSlateBlue"/>
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout>
+                    <Label Text="Local:"/>
+                    <Label Text="{Binding Local}" TextColor="DarkSlateBlue"/>
+                </HorizontalStackLayout>
+            </HorizontalStackLayout>
+        </Frame>
+
+        <Frame Margin="10" BackgroundColor="DarkSeaGreen">
+            <Grid ColumnDefinitions="*, *, *"
+                  RowDefinitions="Auto, Auto">
+                
+                <Label Grid.Row="0" Grid.Column="0" Text="Data de Início:" />
+                <Label Grid.Row="0" Grid.Column="1" Text="Data de Término:" />
+                <Label Grid.Row="0" Grid.Column="2" Text="Duração:" />
+
+                <Label Grid.Row="1" Grid.Column="0" Text="{Binding DataInicio, StringFormat='{0:dd/MM/yyyy}'}" />
+                <Label Grid.Row="1" Grid.Column="1" Text="{Binding DataTermino, StringFormat='{0:dd/MM/yyyy}'}" />
+                
+
+            </Grid>
+        </Frame>
+
+        <Frame Margin="10" BackgroundColor="DarkSeaGreen">
+            <HorizontalStackLayout>
+                <Label Text="Número de Participantes:"/>
+                <Label Text="{Binding NumeroParticipantes}"/>
+            </HorizontalStackLayout>
+        </Frame>
+
+        <Frame Margin="10" BackgroundColor="DarkSeaGreen">
+            <HorizontalStackLayout>
+                <Label Text="Custo Total:"/>
+                <Label Text="{Binding CustoTotal, StringFormat='{0:C}'}"/>
+            </HorizontalStackLayout>
+        </Frame>
+
+        <Button Text="Voltar"
+        HorizontalOptions="Center"
+        Clicked="Button_Clicked"
+        BackgroundColor="DarkSlateBlue"
+        TextColor="Snow"/>
+
+    </VerticalStackLayout>
+</ContentPage>
